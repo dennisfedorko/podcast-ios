@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         profileTableView.delegate = self
         profileTableView.dataSource = self
         profileTableView.backgroundColor = .podcastWhite
-        profileTableView.register(DiscoverTableViewCell.self, forCellReuseIdentifier: "FavoritesCellIdentifier")
+        profileTableView.register(ProfileFavoritesCell.self, forCellReuseIdentifier: "FavoritesCellIdentifier")
         profileTableView.separatorStyle = .none
         profileTableView.scrollIndicatorInsets.top = PHVConstants.statusBarHeight
         automaticallyAdjustsScrollViewInsets = false
@@ -99,16 +99,16 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get episode from favorites and display it. Right now this is activity, will be favorite episodes later.
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCellIdentifier") as! DiscoverTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCellIdentifier") as! ProfileFavoritesCell
         let episode = Episode(id: 0)
-        episode.title = "Puppies Galore"
+        episode.title = "Puppies Galore and how to feed your puppy the proper food so it does not die from starvation."
         let series = Series()
         series.title = "Backyard Puppies Podcast"
         episode.series = series
         episode.dateCreated = Date()
         episode.smallArtworkImage = #imageLiteral(resourceName: "fillerImage")
         cell.episode = episode
-        cell.episodeDescriptionLabel.text = "This episode is about how awesome puppies are, just like every other episode."
+//        cell.episodeDescriptionLabel.text = "This episode is about how awesome puppies are, just like every other episode."
         // Use this when we actually have data
 //        cell.episode = favorites[indexPath.row]
         return cell
@@ -137,7 +137,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return DiscoverTableViewCell().height
+        return ProfileFavoritesCell().height+2*ProfileFavoritesCell().contentPaddingY
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

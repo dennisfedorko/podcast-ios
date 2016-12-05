@@ -28,6 +28,7 @@ extension UIColor {
     // Accents
     @nonobjc static let podcastPink = UIColor.colorFromCode(0xEC7EBD) // Accent 1
     @nonobjc static let podcastGreenBlue = UIColor.colorFromCode(0x22B2B2) // Accent 2
+    @nonobjc static let podcastTeal = UIColor.colorFromCode(0x22D0C9)
     @nonobjc static let podcastBlueLight = UIColor.colorFromCode(0x82BCC2) // Secondary
     
     public static func colorFromCode(_ code: Int) -> UIColor {

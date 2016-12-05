@@ -77,13 +77,13 @@ class ProfileHeaderView: UIView, UICollectionViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .podcastGrayDark
+        backgroundColor = .podcastTeal
         
         topBar = UIView(frame: CGRect(x:0, y:0, width: frame.width, height: statusBarHeight))
         topBar.backgroundColor = .podcastWhite
         
         bottomBar = UIView(frame: CGRect(x:0, y:bottomBarDist, width: frame.width, height: bottomBarHeight))
-        bottomBar.backgroundColor = .podcastWhiteDark
+        bottomBar.backgroundColor = .podcastWhite
         
         profileArea = UIView(frame: CGRect(x: 0, y: statusBarHeight, width: frame.width, height: bottomBarDist-statusBarHeight))
         profileArea.backgroundColor = .clear;
@@ -132,7 +132,7 @@ class ProfileHeaderView: UIView, UICollectionViewDelegate {
         layout.itemSize = CGSize(width: subscriptionsHeight, height: subscriptionsHeight)
         subscriptions = UICollectionView(frame: CGRect(x: 0, y: bottomBarDist+bottomBarHeight+profileSectionHeaderViewHeight, width: frame.width, height: subscriptionsHeight), collectionViewLayout: layout)
         subscriptions.delegate = self
-        subscriptions.backgroundColor = UIColor.podcastWhite
+        subscriptions.backgroundColor = .podcastWhiteDark
         subscriptions.showsHorizontalScrollIndicator = false
         subscriptions.showsVerticalScrollIndicator = false
         subscriptions.contentInset = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6)

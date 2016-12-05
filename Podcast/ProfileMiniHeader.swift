@@ -100,7 +100,7 @@ class ProfileMiniHeader: UIView {
     
     func setTopOpacity(_ opacity: CGFloat) {
         
-        self.profileArea.backgroundColor = opacity == 1 ? UIColor.podcastGrayDark : UIColor.clear
+        self.profileArea.backgroundColor = opacity == 1 ? UIColor.podcastTeal : UIColor.clear
         UIView.animate(withDuration: 0.1, animations: {
             self.usernameLabel.alpha = opacity
             self.nameLabel.alpha = opacity

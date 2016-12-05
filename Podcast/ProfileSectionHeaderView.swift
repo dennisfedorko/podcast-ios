@@ -16,7 +16,7 @@ class ProfileSectionHeaderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.podcastWhite
+        backgroundColor = UIColor.podcastWhiteDark
         
         sectionTitle = UILabel(frame: CGRect(x: 30, y: 9, width: frame.width-60, height: 19))
         sectionTitle.text = ""
